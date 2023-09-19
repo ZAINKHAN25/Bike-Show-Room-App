@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Ingrid+Darling&family=Open+Sans&family=Poppins:ital,wght@0,400;1,500;1,800&display=swap');
+
+* {
+    font-family: Poppins;
+    color: white;
+}
+
+body {
+    background-color: #1b2021;
+}
+
+.navbar-zk {
+    background-color: #5a37d1 !important;
+}
+
+.inputofnavbar {
+    background-color: #6e45f1 !important;
+    border: none !important;
+    width: 100%;
+}
+
+.inputofnavbar:focus {
+    border: 1px solid white !important;
+}
+
+.searchedDiv {
+    width: 400px;
+    background-color: #24292c;
+}
+
+.imgofsearchdata{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.imgofmainframe{
+    width: 100%;
+}
+
+.startcolor{
+    color: orange;
+    transition: all .5s;
+}
+
+.addToCartbtn{
+    background-color: #5a37d1;
+    border: none;
+    transition: all .3s;
+    color: #bfbfbf;
+}
+
+.addToCartbtn:hover{
+    color: #fff;
+}
+
+@media (min-width: 995px) {
+    .classofdivofnavbar {
+        display: flex !important;
+        justify-content: space-around !important;
+    }
+    .inputofnavbar{
+        width: 40vw !important;
+    }
+}
