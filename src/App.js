@@ -120,8 +120,7 @@ function App() {
               </div>
               <div className='pt-3'>
                 
-                  <button className='addToCartbtn rounded-5 py-2 px-3' onClick={()=>setSearchData(sportsBikes)}>Search All Bikes</button>
-                  
+
                 {addtolistarr.map((item, index) => (
                   <div className='d-flex my-2' key={index}>
                     <img className='imgofselected me-3' src={item.imgUrl} />
@@ -136,6 +135,7 @@ function App() {
                     </div>
                   </div>
                 ))}
+                <button className='addToCartbtn rounded-5 py-2 px-3' onClick={()=>setSearchData(sportsBikes)}>Search All Bikes</button>
               </div>
             </div>
           ) : searchdata[currentshowingdiv].isStaredTrue === false ? (
@@ -205,6 +205,7 @@ function App() {
               <div className='mt-3'>
                 You have stared this bike <span className='startcolor'>{searchdata[currentshowingdiv].stared}</span>
               </div>
+              <button className='addToCartbtn rounded-5 py-2 px-3' onClick={()=>setSearchData(sportsBikes)}>Search All Bikes</button>
             </div>
           )}
         </div>
