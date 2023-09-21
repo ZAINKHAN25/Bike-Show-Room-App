@@ -67,7 +67,8 @@ body {
 }
 
 .widtharea{
-    width: 350px;
+    max-width: 350px;
+    
 }
 
 .logoofnavbar{

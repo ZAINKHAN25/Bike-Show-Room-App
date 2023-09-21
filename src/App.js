@@ -113,9 +113,9 @@ function App() {
               </div>
               <div className='pt-3'>
 
-
+                  {/* hello it is a comit */}
                 {addtolistarr.map((item, index) => (
-                  <div className='d-flex align-items-center justify-content-start my-2 widtharea' key={index}>
+                  <div className='d-flex align-items-center flex-wrap justify-content-start my-2 widtharea' key={index}>
                     <img className='imgofselected me-3' src={item.imgUrl} />
                     <div>
                       <div>
