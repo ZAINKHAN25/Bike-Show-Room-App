@@ -69,7 +69,7 @@ function App() {
       {/* navbar */}
 
       <div className='px-1 flex-wrap py-2 d-flex align-items-center navbar-zk'>
-        <div className="fw-800 fs-2 fw-9 my-1">Biker Time</div>
+        <div onClick={() => setiscurrentshowingdivtrue(false)} className="fw-800 fs-2 fw-9 my-1 logoofnavbar">Biker Time</div>
         <div className="d-flex my-1" role="search">
           <input
             value={textofinput}
@@ -102,7 +102,7 @@ function App() {
           ))}
         </div>
 
-        <div className='searchedDiv my-2 mx-1 p-3 d-flex flex-column justify-content-start align-items-center'>
+        <div className='searchedDiv my-2 mx-1 p-3 d-flex flex-column justify-content-between align-items-center'>
           {iscurrentshowingdivtrue === false ? (
             <div>
               <h3>Bikes You Stared</h3>
@@ -115,7 +115,7 @@ function App() {
 
 
                 {addtolistarr.map((item, index) => (
-                  <div className='d-flex align-items-center justify-content-center my-2' key={index}>
+                  <div className='d-flex align-items-center justify-content-start my-2 widtharea' key={index}>
                     <img className='imgofselected me-3' src={item.imgUrl} />
                     <div>
                       <div>

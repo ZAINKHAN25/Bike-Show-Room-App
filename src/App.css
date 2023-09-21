@@ -66,6 +66,19 @@ body {
     object-fit: cover;
 }
 
+.widtharea{
+    width: 350px;
+}
+
+.logoofnavbar{
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.logoofnavbar:hover{
+    text-shadow: 1px 1px #e1e1e1;
+}
+
 
 @media (max-width:340px) {
     .inputofnavbar{
