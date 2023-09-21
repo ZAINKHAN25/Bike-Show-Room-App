@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="body">
       {/* navbar */}
-      <nav className="navbar navbar-zk navbar-expand-lg bg-body-tertiary">
+      {/* <nav className="navbar navbar-zk navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -92,7 +92,26 @@ function App() {
             <div>Found {searchdata.length} top result</div>
           </div>
         </div>
-      </nav>
+      </nav> */}
+
+      <div className='px-1 flex-wrap py-2 d-flex align-items-center navbar-zk'>
+      <div className="fw-800 fs-2 fw-9 my-1">Biker Time</div>
+            <div className="d-flex my-1" role="search">
+              <input
+                value={textofinput}
+                onChange={(e) => {
+                  settextofinput(e.target.value);
+                  searchdatafoo(); // Call the searchdatafoo function on input change
+                }}
+                className="form-control me-2 inputofnavbar"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+
+            </div>
+            <div className='my-1'>Found {searchdata.length} top result</div>        
+      </div>
 
       {/* section area */}
       <div className='d-flex justify-content-center align-items-stretch flex-wrap py-1'>

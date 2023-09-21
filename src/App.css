@@ -11,12 +11,15 @@ body {
 
 .navbar-zk {
     background-color: #5a37d1 !important;
+    display: flex !important;
+    justify-content: space-around !important;
 }
 
 .inputofnavbar {
     background-color: #6e45f1 !important;
     border: none !important;
-    width: 100%;
+    width: 300px;
+    margin: 0 20px;
 }
 
 .inputofnavbar:focus {
@@ -63,12 +66,9 @@ body {
     object-fit: cover;
 }
 
-@media (min-width: 995px) {
-    .classofdivofnavbar {
-        display: flex !important;
-        justify-content: space-around !important;
-    }
+
+@media (max-width:340px) {
     .inputofnavbar{
-        width: 40vw !important;
+        width: 100%;
     }
 }
