@@ -113,17 +113,17 @@ function App() {
               </div>
               <div className='pt-3'>
 
-                  {/* hello it is a comit */}
+
                 {addtolistarr.map((item, index) => (
                   <div className='d-flex align-items-center flex-wrap justify-content-start my-2 widtharea' key={index}>
-                    <img className='imgofselected me-3' src={item.imgUrl} />
+                    <img className='imgofselected me-3 my-2' src={item.imgUrl} />
                     <div>
                       <div>
                         {item.name}
                       </div>
                       <div>
                         <span>{item.price}</span>
-                        <span className='startcolor ms-2'><i className='fa-star fa-solid startcolor'></i> {item.stared}</span>
+                        <span className='startcolor m-2'><i className='fa-star fa-solid startcolor'></i> {item.stared}</span>
                       </div>
                     </div>
                     <div onClick={() => {
@@ -132,7 +132,7 @@ function App() {
                       copyofaddtolistarr.splice(index, 1); // Remove the item from the array
                       setaddtolistarr(copyofaddtolistarr);
                     }}>
-                      <i class="fa-solid ms-2 fs-4 fa-x" style={{ color: "#ff0000" }}></i>
+                      <i class="fa-solid m-2 fs-4 fa-x" style={{ color: "#ff0000" }}></i>
                     </div>
 
                   </div>
