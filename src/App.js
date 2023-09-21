@@ -50,67 +50,41 @@ function App() {
   };
 
   function searchdatafoo() {
-    if(textofinput === '') {
+    if (textofinput === '') {
       setSearchData(sportsBikes)
     }
-    else{
+    else {
 
       const filteredBikes = sportsBikes.filter((bike) =>
-      bike.name && bike.name?.toLowerCase().includes(textofinput?.toLowerCase())
+        bike.name && bike.name?.toLowerCase().includes(textofinput?.toLowerCase())
       );
       setSearchData(filteredBikes);
     }
   }
-  
+
 
 
   return (
     <div className="body">
       {/* navbar */}
-      {/* <nav className="navbar navbar-zk navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-
-          <div className="collapse navbar-collapse classofdivofnavbar" id="navbarSupportedContent">
-            <div className="fw-800 fs-4">Biker Time</div>
-            <div className="d-flex" role="search">
-              <input
-                value={textofinput}
-                onChange={(e) => {
-                  settextofinput(e.target.value);
-                  searchdatafoo(); // Call the searchdatafoo function on input change
-                }}
-                className="form-control me-2 inputofnavbar"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-
-            </div>
-            <div>Found {searchdata.length} top result</div>
-          </div>
-        </div>
-      </nav> */}
 
       <div className='px-1 flex-wrap py-2 d-flex align-items-center navbar-zk'>
-      <div className="fw-800 fs-2 fw-9 my-1">Biker Time</div>
-            <div className="d-flex my-1" role="search">
-              <input
-                value={textofinput}
-                onChange={(e) => {
-                  settextofinput(e.target.value);
-                  searchdatafoo(); // Call the searchdatafoo function on input change
-                }}
-                className="form-control me-2 inputofnavbar"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
+        <div className="fw-800 fs-2 fw-9 my-1">Biker Time</div>
+        <div className="d-flex my-1" role="search">
+          <input
+            value={textofinput}
+            onChange={(e) => {
+              settextofinput(e.target.value);
+              searchdatafoo(); // Call the searchdatafoo function on input change
+            }}
+            className="form-control me-2 inputofnavbar"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
 
-            </div>
-            <div className='my-1'>Found {searchdata.length} top result</div>        
+        </div>
+        <div className='my-1'>Found {searchdata.length} top result</div>
       </div>
 
       {/* section area */}
@@ -138,10 +112,10 @@ function App() {
                 <span className='mx-1'>{calculateAverageStars()} Stars  </span>
               </div>
               <div className='pt-3'>
-                
+
 
                 {addtolistarr.map((item, index) => (
-                  <div className='d-flex my-2' key={index}>
+                  <div className='d-flex align-items-center justify-content-center my-2' key={index}>
                     <img className='imgofselected me-3' src={item.imgUrl} />
                     <div>
                       <div>
@@ -152,9 +126,18 @@ function App() {
                         <span className='startcolor ms-2'><i className='fa-star fa-solid startcolor'></i> {item.stared}</span>
                       </div>
                     </div>
+                    <div onClick={() => {
+                      item.isStaredTrue = false;
+                      const copyofaddtolistarr = [...addtolistarr];
+                      copyofaddtolistarr.splice(index, 1); // Remove the item from the array
+                      setaddtolistarr(copyofaddtolistarr);
+                    }}>
+                      <i class="fa-solid ms-2 fs-4 fa-x" style={{ color: "#ff0000" }}></i>
+                    </div>
+
                   </div>
                 ))}
-                <button className='addToCartbtn rounded-5 py-2 px-3' onClick={()=>setSearchData(sportsBikes)}>Search All Bikes</button>
+                <button className='addToCartbtn rounded-5 py-2 px-3' onClick={() => setSearchData(sportsBikes)}>Search All Bikes</button>
               </div>
             </div>
           ) : searchdata[currentshowingdiv].isStaredTrue === false ? (
@@ -224,7 +207,7 @@ function App() {
               <div className='mt-3'>
                 You have stared this bike <span className='startcolor'>{searchdata[currentshowingdiv].stared}</span>
               </div>
-              <button className='addToCartbtn rounded-5 py-2 px-3' onClick={()=>setSearchData(sportsBikes)}>Search All Bikes</button>
+              <button className='addToCartbtn rounded-5 py-2 px-3' onClick={() => setSearchData(sportsBikes)}>Search All Bikes</button>
             </div>
           )}
         </div>
